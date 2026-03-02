@@ -40,6 +40,7 @@ module.exports = class Organization {
     const validRepos = [];
     
     for (const repo of repos) {
+      console.log(`Processing ${repo}`)
       try {
         // Check if repository contents are accessible
         await this.octokit.request('GET /repos/{owner}/{repo}/contents', {
